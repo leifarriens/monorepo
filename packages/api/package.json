@@ -8,6 +8,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@la/internal": "workspace:*"
+    "@la/internal": "*"
   }
 }

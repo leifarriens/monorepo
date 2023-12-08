@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "manypkg check",
     "lint": "pnpm --filter=@la/* lint",
     "typecheck": "pnpm --filter=@la/* typecheck",
     "format": "prettier . --write"
@@ -11,7 +12,8 @@
   "keywords": [],
   "author": "Leif Arriens",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "@manypkg/cli": "^0.21.1",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.55.0",

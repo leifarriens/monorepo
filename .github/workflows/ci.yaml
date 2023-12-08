@@ -3,12 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - experimental
+      - main
   pull_request:
     branches:
-      - production
-      - development
-      - experimental
+      - main
 
 jobs:
   ci:

@@ -1,0 +1,13 @@
+{
+  "name": "@la/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "eslint . --ext ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@la/internal": "workspace:*"
+  }
+}

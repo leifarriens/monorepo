@@ -1,3 +1,1 @@
-import { double } from "@la/internal";
-
-double(2);
+export * from "./task";

@@ -7,6 +7,7 @@
     "postinstall": "manypkg check",
     "lint": "pnpm --filter=@la/* lint",
     "typecheck": "pnpm --filter=@la/* typecheck",
+    "test": "pnpm --filter=@la/* test",
     "format": "prettier . --write"
   },
   "keywords": [],
@@ -16,10 +17,12 @@
     "@manypkg/cli": "^0.21.1",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
+    "@vitest/coverage-v8": "^1.1.0",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "3.1.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
   },
   "packageManager": "pnpm@8.9.2"
 }

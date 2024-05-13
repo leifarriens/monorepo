@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
+    "target": "ES2022",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "strict": true,
     "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "allowJs": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "module": "preserve",
+    "noEmit": true
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "build", "dist"]

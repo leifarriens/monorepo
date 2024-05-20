@@ -15,17 +15,17 @@
   "author": "Leif Arriens",
   "license": "ISC",
   "dependencies": {
-    "@manypkg/cli": "^0.21.3",
+    "@manypkg/cli": "^0.21.4",
     "@types/node": "20.12.12",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
-    "@vitest/coverage-v8": "^1.4.0",
-    "eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^9.3.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "3.2.5",
     "typescript": "^5.4.4",
-    "typescript-eslint": "^7.5.0",
-    "vitest": "^1.4.0"
+    "typescript-eslint": "^7.10.0",
+    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@9.1.1"
 }

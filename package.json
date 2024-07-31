@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "postinstall": "manypkg check",
-    "lint": "pnpm --filter=@la/* lint",
-    "typecheck": "pnpm --filter=@la/* typecheck",
-    "test": "pnpm --filter=@la/* test",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
     "format": "prettier . --write"
   },
   "keywords": [],
@@ -16,13 +16,14 @@
   "license": "ISC",
   "dependencies": {
     "@manypkg/cli": "^0.21.4",
-    "@types/node": "20.14.13",
+    "@types/node": "^20.14.13",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "@vitest/coverage-v8": "^2.0.0",
     "eslint": "^9.4.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.3.3",
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.10",
     "typescript": "^5.4.5",
     "typescript-eslint": "^8.0.0",
     "vitest": "^2.0.0"

@@ -12,7 +12,7 @@ importers:
         specifier: ^0.21.4
         version: 0.21.4
       '@types/node':
-        specifier: 20.14.13
+        specifier: ^20.14.13
         version: 20.14.13
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.0.0
@@ -30,8 +30,11 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.8.0)
       prettier:
-        specifier: 3.3.3
+        specifier: ^3.3.3
         version: 3.3.3
+      turbo:
+        specifier: ^2.0.10
+        version: 2.0.10
       typescript:
         specifier: ^5.4.5
         version: 5.5.4
@@ -1342,6 +1345,40 @@ packages:
     engines: {node: '>=16'}
     peerDependencies:
       typescript: '>=4.2.0'
+
+  turbo-darwin-64@2.0.10:
+    resolution: {integrity: sha512-ND4hohx0wrd0AUsCf2RsdavlzUWVi0JU3vX5Vn2+wk3GG5RcZWIKi3y+it9MjgYuqqlCystkDbeamfH05iiQBQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  turbo-darwin-arm64@2.0.10:
+    resolution: {integrity: sha512-cvHMMi1jDiiVl5ls1nWwXyanH7mB+xD3oYyZOC3NzZdFAfce3CWpL6hgUnK2CFxbdvaHQTizkQEgsHvUeD9nTQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  turbo-linux-64@2.0.10:
+    resolution: {integrity: sha512-dPRwHrKkzyc/VuQLfhOeYLkBxA60vvLZyn9pXChRF0zyimg04OnhBYcKBNkfWMUU+Z1gQDFEvfyvnV9EEHLh0Q==}
+    cpu: [x64]
+    os: [linux]
+
+  turbo-linux-arm64@2.0.10:
+    resolution: {integrity: sha512-6qsYl+b1gf243QbL6cw+TbgUEWo6/krCCWDQjVg/8Znx45rkXnTJUqtIAMkQQsT+t7d3UU8hreQ77pjOW59LcQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  turbo-windows-64@2.0.10:
+    resolution: {integrity: sha512-rkMOqvwN7hmMJNeChj63ZpLlIF6b9QC0jW/IbOMgcZMLcvz9iF+qCc2yaeDWgfOgLsNjhtv1rlhimShUuasSXw==}
+    cpu: [x64]
+    os: [win32]
+
+  turbo-windows-arm64@2.0.10:
+    resolution: {integrity: sha512-r7HQScx+CpO0p+Mw97Yq63uUAIwTfEUXRX6qxzeipBK+mTsnV1A6dTTYeVLD3S5AlL8GGdXddx0swyDeeVkQng==}
+    cpu: [arm64]
+    os: [win32]
+
+  turbo@2.0.10:
+    resolution: {integrity: sha512-1t10h9bWl94/zktjzVWwTerJL3kIMDSA8mfibr1bevGLjF0DsiHOJFkCQFa5QABK0eXb0Af5mdRehLRBVem0Qg==}
+    hasBin: true
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -2695,6 +2732,33 @@ snapshots:
   ts-api-utils@1.3.0(typescript@5.5.4):
     dependencies:
       typescript: 5.5.4
+
+  turbo-darwin-64@2.0.10:
+    optional: true
+
+  turbo-darwin-arm64@2.0.10:
+    optional: true
+
+  turbo-linux-64@2.0.10:
+    optional: true
+
+  turbo-linux-arm64@2.0.10:
+    optional: true
+
+  turbo-windows-64@2.0.10:
+    optional: true
+
+  turbo-windows-arm64@2.0.10:
+    optional: true
+
+  turbo@2.0.10:
+    optionalDependencies:
+      turbo-darwin-64: 2.0.10
+      turbo-darwin-arm64: 2.0.10
+      turbo-linux-64: 2.0.10
+      turbo-linux-arm64: 2.0.10
+      turbo-windows-64: 2.0.10
+      turbo-windows-arm64: 2.0.10
 
   type-check@0.4.0:
     dependencies:

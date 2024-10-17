@@ -1,6 +1,7 @@
-import { it, expect, vi } from "vitest";
-import { doSomething } from "./";
 import * as internals from "@la/internal";
+import { expect, it, vi } from "vitest";
+
+import { doSomething } from "./";
 
 vi.mock("@la/internal");
 

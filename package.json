@@ -15,7 +15,7 @@
   "author": "Leif Arriens",
   "license": "ISC",
   "dependencies": {
-    "@manypkg/cli": "^0.21.4",
+    "@manypkg/cli": "^0.22.0",
     "@types/node": "^20.14.13",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",

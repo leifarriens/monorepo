@@ -1,15 +1,15 @@
 {
   "name": "@la/monorepo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "manypkg check",
+    "format": "prettier . --write",
     "lint": "turbo lint",
-    "typecheck": "turbo typecheck",
+    "postinstall": "manypkg check",
     "test": "turbo test",
-    "format": "prettier . --write"
+    "typecheck": "turbo typecheck"
   },
   "keywords": [],
   "author": "Leif Arriens",

@@ -1,6 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES2022",
+    "lib": ["ES2022"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -17,6 +19,5 @@
     "module": "preserve",
     "noEmit": true
   },
-  "include": ["**/*.ts"],
   "exclude": ["node_modules", "build", "dist"]
 }

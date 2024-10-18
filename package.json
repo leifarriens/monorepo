@@ -1,7 +1,7 @@
 {
   "name": "@la/monorepo",
   "version": "0.1.0",
-  "description": "",
+  "description": "No Frameworks included Typescript Monorepo Template with Linter, Tests & CI",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,9 +11,8 @@
     "test": "turbo test",
     "typecheck": "turbo typecheck"
   },
-  "keywords": [],
   "author": "Leif Arriens",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@manypkg/cli": "^0.22.0",
     "@types/node": "^22.7.6",

@@ -1,11 +1,11 @@
-import * as internals from "@la/internal";
+import * as core from "@la/core";
 import { expect, it, vi } from "vitest";
 
 import { doSomething } from "./";
 
-vi.mock("@la/internal");
+vi.mock("@la/core");
 
-const mockFn = vi.spyOn(internals, "double");
+const mockFn = vi.spyOn(core, "double");
 
 it("should call double", () => {
   doSomething(4);

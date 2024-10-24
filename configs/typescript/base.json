@@ -13,11 +13,13 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "allowJs": true,
+    "incremental": true,
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "module": "preserve",
-    "noEmit": true
+    "noEmit": true,
+    "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules", "build", "dist"]
 }

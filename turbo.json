@@ -9,7 +9,8 @@
       "dependsOn": ["^build"]
     },
     "typecheck": {
-      "dependsOn": ["^topo"]
+      "dependsOn": ["^topo"],
+      "outputs": [".cache/tsbuildinfo.json"]
     },
     "lint": {},
     "test": {}

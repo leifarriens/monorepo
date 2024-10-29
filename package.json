@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "format": "prettier . --write",
-    "lint": "turbo lint",
+    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "postinstall": "manypkg check",
     "test": "turbo test",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck --continue"
   },
   "author": "Leif Arriens",
   "license": "MIT",

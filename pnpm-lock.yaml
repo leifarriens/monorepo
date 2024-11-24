@@ -47,7 +47,7 @@ importers:
         version: link:../typescript
       '@types/eslint-plugin-jsx-a11y':
         specifier: ^6.9.0
-        version: 6.9.0
+        version: 6.10.0
       '@types/eslint__js':
         specifier: 8.42.3
         version: 8.42.3
@@ -473,8 +473,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@types/eslint-plugin-jsx-a11y@6.9.0':
-    resolution: {integrity: sha512-5nw0sPyYGCsFibwjOXftxends8Nrh/JLgDtBWj6aJVcN14kHwy1yIy0o1MGLKfCcR27pvUFGgYG+hX2HSX16uA==}
+  '@types/eslint-plugin-jsx-a11y@6.10.0':
+    resolution: {integrity: sha512-TGKmk2gO6DrvTVADNOGQMqn3SzqcFcJILFnXNllQA34us9uClS3/AsL/cERPz6jS9ePI3bx+1q8/d2GZsxPVYw==}
 
   '@types/eslint@9.6.1':
     resolution: {integrity: sha512-FXx2pKgId/WyYo2jXw63kk7/+TY7u7AziEJxJAnSFzHlqTAS3Ync6SvgYAN/k4/PQpnnVuzoMuVnByKK2qp0ag==}
@@ -1680,7 +1680,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.26.0':
     optional: true
 
-  '@types/eslint-plugin-jsx-a11y@6.9.0':
+  '@types/eslint-plugin-jsx-a11y@6.10.0':
     dependencies:
       '@types/eslint': 9.6.1
 

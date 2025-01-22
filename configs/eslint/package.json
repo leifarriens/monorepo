@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.2.5",
-    "eslint-plugin-perfectionist": "^4.6.0",
-    "typescript-eslint": "^8.19.1"
+    "eslint-plugin-perfectionist": "^4.7.0",
+    "typescript-eslint": "^8.21.0"
   },
   "devDependencies": {
     "@la/tsconfig": "workspace:*",

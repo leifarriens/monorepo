@@ -36,7 +36,7 @@ jobs:
           turbo telemetry disable
 
       - name: 🗂️ Setup turbo cache
-        uses: rharkor/caching-for-turbo@v1.6
+        uses: rharkor/caching-for-turbo@v1.8
 
       - name: 🏷️ Typecheck
         run: turbo typecheck

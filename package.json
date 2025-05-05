@@ -4,6 +4,7 @@
   "description": "No Frameworks included Typescript Monorepo Template with Linter, Tests & CI",
   "type": "module",
   "scripts": {
+    "dev": "turbo dev",
     "format": "prettier . --write",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",

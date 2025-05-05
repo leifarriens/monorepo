@@ -2,3 +2,5 @@ packages:
   - "packages/*"
   - "configs/**"
   - "!**/test/**"
+onlyBuiltDependencies:
+  - esbuild

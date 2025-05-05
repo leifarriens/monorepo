@@ -18,6 +18,6 @@
   "devDependencies": {
     "@la/eslint-config": "workspace:*",
     "@la/tsconfig": "workspace:*",
-    "eslint": "^9.20.1"
+    "eslint": "^9.26.0"
   }
 }

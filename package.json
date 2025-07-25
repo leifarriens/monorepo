@@ -15,7 +15,7 @@
   "author": "Leif Arriens",
   "license": "MIT",
   "devDependencies": {
-    "@manypkg/cli": "^0.24.0",
+    "@manypkg/cli": "^0.25.0",
     "@types/node": "^22.15.4",
     "prettier": "^3.6.2",
     "turbo": "^2.5.4"

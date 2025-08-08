@@ -12,13 +12,13 @@ importers:
         specifier: ^0.25.0
         version: 0.25.0
       '@types/node':
-        specifier: ^22.15.4
+        specifier: ^22.17.1
         version: 22.17.1
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
       turbo:
-        specifier: ^2.5.4
+        specifier: ^2.5.5
         version: 2.5.5
 
   configs/eslint:
@@ -1014,8 +1014,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  ky@1.7.4:
-    resolution: {integrity: sha512-zYEr/gh7uLW2l4su11bmQ2M9xLgQLjyvx58UyNM/6nuqyWFHPX5ktMjvpev3F8QWdjSsHUpnWew4PBCswBNuMQ==}
+  ky@1.8.2:
+    resolution: {integrity: sha512-XybQJ3d4Ea1kI27DoelE5ZCT3bSJlibYTtQuMsyzKox3TMyayw1asgQdl54WroAm+fIA3ZCr8zXW2RpR7qWVpA==}
     engines: {node: '>=18'}
 
   levn@0.4.1:
@@ -1175,8 +1175,8 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  registry-auth-token@5.0.3:
-    resolution: {integrity: sha512-1bpc9IyC+e+CNFRaWyn77tk4xGG4PPUyfakSmA6F6cvUDjrm58dfyJ3II+9yb10EDkHoy1LaPSmHaWLOH3m6HA==}
+  registry-auth-token@5.1.0:
+    resolution: {integrity: sha512-GdekYuwLXLxMuFTwAPg5UKGLW/UXzQrZvH/Zj791BQif5T05T0RsaLfHc9q3ZOKi7n+BoprPD9mJ0O0k4xzUlw==}
     engines: {node: '>=14'}
 
   registry-url@6.0.1:
@@ -1358,8 +1358,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  validate-npm-package-name@6.0.0:
-    resolution: {integrity: sha512-d7KLgL1LD3U3fgnvWEY1cQXoO/q6EQ1BSz48Sa149V/5zVTAbgmZIpyI8TRi6U9/JNyeYLlTKsEMPtLC27RFUg==}
+  validate-npm-package-name@6.0.2:
+    resolution: {integrity: sha512-IUoow1YUtvoBBC06dXs8bR8B9vuA3aJfmQNKMoaPG/OFsPmoQvw8xh+6Ye25Gx9DQhoEom3Pcu9MKHerm/NpUQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
   vite-node@3.2.4:
@@ -1662,7 +1662,7 @@ snapshots:
       sembear: 0.7.0
       semver: 7.7.2
       tinyexec: 1.0.1
-      validate-npm-package-name: 6.0.0
+      validate-npm-package-name: 6.0.2
 
   '@manypkg/find-root@3.1.0':
     dependencies:
@@ -2356,7 +2356,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  ky@1.7.4: {}
+  ky@1.8.2: {}
 
   levn@0.4.1:
     dependencies:
@@ -2441,8 +2441,8 @@ snapshots:
 
   package-json@10.0.1:
     dependencies:
-      ky: 1.7.4
-      registry-auth-token: 5.0.3
+      ky: 1.8.2
+      registry-auth-token: 5.1.0
       registry-url: 6.0.1
       semver: 7.7.2
 
@@ -2494,7 +2494,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  registry-auth-token@5.0.3:
+  registry-auth-token@5.1.0:
     dependencies:
       '@pnpm/npm-conf': 2.3.1
 
@@ -2671,7 +2671,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  validate-npm-package-name@6.0.0: {}
+  validate-npm-package-name@6.0.2: {}
 
   vite-node@3.2.4(@types/node@22.17.1):
     dependencies:

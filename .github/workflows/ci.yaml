@@ -29,20 +29,14 @@ jobs:
         shell: bash
         run: pnpm install --frozen-lockfile
 
-      - name: 🏎️ Install turbo
-        shell: bash
-        run: |
-          pnpm i -g turbo@2.5.5
-          turbo telemetry disable
-
       - name: 🗂️ Setup turbo cache
         uses: rharkor/caching-for-turbo@v1.8
 
       - name: 🏷️ Typecheck
-        run: turbo typecheck
+        run: pnpm typecheck
 
       - name: 🔬 Lint
-        run: turbo lint
+        run: pnpm lint
 
       - name: 🧪 Test
-        run: turbo test
+        run: pnpm test

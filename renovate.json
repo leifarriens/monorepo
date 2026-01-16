@@ -2,5 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "automerge": true,
-  "ignorePaths": ["**/node_modules/**", "**/packages/**"]
+  "ignorePaths": ["**/node_modules/**"]
 }

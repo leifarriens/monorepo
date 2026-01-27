@@ -6,11 +6,13 @@ import eslint from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import perfectionist from "eslint-plugin-perfectionist";
 import tseslint from "typescript-eslint";
+import turboConfig from "eslint-config-turbo/flat";
 
 export default defineConfig(
   eslint.configs.recommended,
-  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
+  turboConfig,
   perfectionist.configs["recommended-natural"],
   { ignores: ["**/*.config.*"] },
   includeIgnoreFile(path.join(import.meta.dirname, "../../.gitignore")),

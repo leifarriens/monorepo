@@ -1,13 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env"],
+  "ui": "tui",
   "tasks": {
     "topo": {
       "dependsOn": ["^topo"]
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": [".cache/tsbuildinfo.json", "dist/**", "build/**"]
     },
     "dev": {
       "dependsOn": ["^dev"],
@@ -15,13 +15,23 @@
       "persistent": true
     },
     "typecheck": {
-      "dependsOn": ["^topo"],
+      "dependsOn": ["^topo", "^build"],
       "outputs": [".cache/tsbuildinfo.json"]
     },
     "lint": {
-      "dependsOn": ["^topo"],
+      "dependsOn": ["^topo", "^build"],
       "outputs": [".cache/.eslintcache"]
     },
-    "test": {}
-  }
+    "test": {
+      "dependsOn": ["^topo", "^build"]
+    },
+    "test:watch": {
+      "dependsOn": ["^topo", "^build"],
+      "interactive": true,
+      "persistent": true,
+      "cache": false
+    }
+  },
+  "globalDependencies": ["**/.env"],
+  "globalPassThroughEnv": ["NODE_ENV", "CI"]
 }

@@ -22,6 +22,33 @@ pnpm lint && pnpm typecheck && pnpm test
 
 If any command fails, fix the issues before considering the task complete.
 
+## Iterative Fix Workflow
+
+When fixing a specific issue (e.g., a lint error or a single failing test), use targeted commands for faster feedback:
+
+1. **Fix the issue** in your code
+2. **Run the specific verification** for that issue type:
+
+   ```bash
+   # After fixing a lint issue
+   pnpm lint
+
+   # After fixing a type error
+   pnpm typecheck
+
+   # After fixing a failing test
+   pnpm test
+   ```
+
+3. **Once the targeted check passes**, run the full verification loop:
+   ```bash
+   pnpm format && pnpm lint && pnpm typecheck && pnpm test
+   ```
+
+This avoids running all checks repeatedly while iterating on a fix. Turbo caches unchanged packages, so the full verification is fast after targeted work.
+
+> **Note**: For formatting issues, `pnpm format` auto-fixes problems—just re-run it and proceed to full verification.
+
 ## Package Manager
 
 This monorepo uses **pnpm**. Always use `pnpm` commands.

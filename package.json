@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo dev",
     "format": "prettier . --write --cache --cache-location .cache/.prettiercache",
+    "build": "turbo build --continue",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "postinstall": "manypkg check",

@@ -58,7 +58,13 @@ Or use the `./init.sh` script to initialize and install in one command.
 
 `typecheck`: Checks for TypeScript typing issues across the codebase.
 
-### Tsconfig
+### Example Packages with Different tsconfig Setups
+
+- **[core](packages/core)**: Internal monorepo library that only emits type declarations. Consumers import directly from source while benefiting from pre-built `.d.ts` files for faster IDE performance.
+
+- **[lib](packages/lib)**: Publishable library example that builds JavaScript and type declarations. Use this pattern for packages intended for npm or external consumers.
+
+- **[api](packages/api)**: Node.js application example that builds executable JavaScript. Use this pattern for CLIs, servers, or scripts that run in a Node.js environment.
 
 Read more about the tsconfig setup in the [Tsconfig README](./configs/typescript/README.md).
 

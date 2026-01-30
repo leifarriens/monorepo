@@ -16,4 +16,18 @@ For building publishable libraries consumed by other packages or external users.
 
 ### build-types.json
 
-For building internal monorepo packages where consumers import directly from source. Emits only `.d.ts` and `.d.ts.map` files. Speeds up IDE performance and type checking without duplicating JavaScript that's never executed.
+For building internal monorepo packages where consumers import directly from source. Emits only `.d.ts` and `.d.ts.map` files. Speeds up IDE performance and type checking without duplicating JavaScript that's never runs.
+
+> [!IMPORTANT]  
+> When defining `exports` in package.json, TypeScript reads fields in order and uses the first match. "types" **NEED** to be before "import" to ensure TypeScript resolves .d.ts files instead of falling back to source .ts files.
+
+```json
+{
+  "exports": {
+    ".": {
+      "types": "./dist/schema.d.ts",
+      "import": "./src/schema.ts"
+    }
+  }
+}
+```

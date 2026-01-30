@@ -4,11 +4,7 @@
 
 ### base.json
 
-For type checking Node.js packages. Uses `nodenext` module resolution (requires `.js` extensions on relative imports) and enables maximum strictness. Does not emit files.
-
-### bundler.json
-
-For type checking bundled applications (Next.js, Expo, Vite). Extends `base.json` but uses `bundler` module resolution, allowing extensionless imports. Does not emit files.
+For type checking all packages. Uses `bundler` module resolution with extensionless imports. Enables maximum strictness. Does not emit files.
 
 ### build-node.json
 

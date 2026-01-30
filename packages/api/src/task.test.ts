@@ -2,7 +2,7 @@ import * as core from "@la/core";
 import * as lib from "@la/lib";
 import { expect, it, vi } from "vitest";
 
-import { doSomething } from "./task.js";
+import { doSomething } from "./task";
 
 vi.mock("@la/core");
 vi.mock("@la/lib");

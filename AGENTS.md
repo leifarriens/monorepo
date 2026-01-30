@@ -57,7 +57,7 @@ This monorepo uses **pnpm**. Always use `pnpm` commands.
 
 ### All Packages (Recommended)
 
-Run commands from the repository root to verify all packages. Non-changed packages are cached with turbo for faster execution:
+Run commands from the repository root to verify all packages. Non-changed packages are cached with turbo for faster runs:
 
 ```bash
 pnpm lint

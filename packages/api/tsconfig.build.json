@@ -1,0 +1,3 @@
+{
+  "extends": "@la/tsconfig/build-node.json"
+}

@@ -56,6 +56,9 @@ importers:
       '@la/core':
         specifier: workspace:*
         version: link:../core
+      '@la/lib':
+        specifier: workspace:*
+        version: link:../lib
     devDependencies:
       '@la/eslint-config':
         specifier: workspace:*
@@ -77,6 +80,27 @@ importers:
         version: 4.0.18(@types/node@24.10.9)
 
   packages/core:
+    devDependencies:
+      '@la/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
+      '@la/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/typescript
+      '@vitest/coverage-v8':
+        specifier: ^4.0.17
+        version: 4.0.18(vitest@4.0.18(@types/node@24.10.9))
+      eslint:
+        specifier: ^9.38.0
+        version: 9.39.2
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^4.0.17
+        version: 4.0.18(@types/node@24.10.9)
+
+  packages/lib:
     devDependencies:
       '@la/eslint-config':
         specifier: workspace:*

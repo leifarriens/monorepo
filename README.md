@@ -8,7 +8,7 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 - **[pnpm](https://github.com/pnpm/pnpm)**: A fast, disk space efficient package manager. This template uses pnpm to manage dependencies, ensuring efficient and consistent package installations across the monorepo.
 
-- **[Turbo](https://turborepo.com/docs)**: A tool for speeding up builds and task execution in monorepos. Turbo helps run scripts like linting, testing, and type checking across multiple packages in parallel, leveraging caching for faster repeats.
+- **[Turbo](https://turborepo.com/docs)**: A tool for speeding up builds and task runs in monorepos. Turbo helps run scripts like linting, testing, and type checking across multiple packages in parallel, leveraging caching for faster repeats.
 
 - **[Vitest](https://vitest.dev/guide/)**: A Vite-native unit testing framework that's fast and integrates well with modern builds. Vitest is used for running tests, providing a quick feedback loop during development.
 
@@ -54,7 +54,7 @@ Or use the `./init.sh` script to initialize and install in one command.
 
 `lint:fix`: Automatically fixes linting issues where possible.
 
-`test`: Executes the test suite using Vitest.
+`test`: Runs the test suite using Vitest.
 
 `typecheck`: Checks for TypeScript typing issues across the codebase.
 

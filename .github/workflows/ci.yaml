@@ -40,3 +40,6 @@ jobs:
 
       - name: 🧪 Test
         run: pnpm test
+
+      - name: 👷 Build
+        run: pnpm turbo build

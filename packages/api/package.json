@@ -5,7 +5,8 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "clean": "git clean -xdf .cache .turbo node_modules dist",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
     "lint": "eslint",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
@@ -13,7 +14,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@la/core": "workspace:*"
+    "@la/core": "workspace:*",
+    "@la/lib": "workspace:*"
   },
   "devDependencies": {
     "@la/eslint-config": "workspace:*",

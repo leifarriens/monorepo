@@ -4,9 +4,9 @@
     "target": "es2023",
     "lib": ["ES2023"],
 
-    "module": "nodenext",
+    "module": "preserve",
     "moduleDetection": "force",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
 
     "strict": true,

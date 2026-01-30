@@ -6,13 +6,13 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 ## Key Features
 
-- **[pnpm](https://github.com/pnpm/pnpm)**: A fast, disk space efficient package manager. This template uses pnpm to manage dependencies, ensuring efficient and consistent package installations across the monorepo.
+- **[pnpm](https://github.com/pnpm/pnpm)**: Significantly faster and more disk-space efficient than npm. Plus it has first-class monorepo support, making it ideal for managing multiple packages within a single repository.
 
 - **[Turbo](https://turborepo.com/docs)**: A tool for speeding up builds and task runs in monorepos. Turbo helps run scripts like linting, testing, and type checking across multiple packages in parallel, leveraging caching for faster repeats.
 
-- **[Vitest](https://vitest.dev/guide/)**: A Vite-native unit testing framework that's fast and integrates well with modern builds. Vitest is used for running tests, providing a quick feedback loop during development.
+- **[Vitest](https://vitest.dev/guide/)**: Obvious choice for (unit) testing in a TypeScript environment.
 
-- **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Code quality tools that enforce consistent style and find problems in your code. The linting setup uses Prettier to automatically format your code and ESLint to catch common errors and enforce best practices.
+- **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Ensures strict rules and consistent code style across the entire codebase.
 
 ## Setup and Usage
 
@@ -58,6 +58,10 @@ Or use the `./init.sh` script to initialize and install in one command.
 
 `typecheck`: Checks for TypeScript typing issues across the codebase.
 
+### Tsconfig
+
+Read more about the tsconfig setup in the [Tsconfig README](./configs/typescript/README.md).
+
 ### Continuous Integration
 
-The monorepo is designed to easily integrate with CI/CD systems. By using the provided scripts and tools like Turbo, tasks like testing and linting are done efficiently and can be easily triggered in a CI environment.
+The monorepo is designed to easily integrate with CI/CD systems. The provided GitHub Actions workflow (`.github/workflows/ci.yml`) runs linting, testing, and type checking on every push and pull request. It uses turbo remote caching to speed up the process.

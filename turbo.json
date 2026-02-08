@@ -10,7 +10,7 @@
       "outputs": [".cache/tsbuildinfo.json", "dist/**", "build/**"]
     },
     "dev": {
-      "dependsOn": ["^dev"],
+      "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
     },

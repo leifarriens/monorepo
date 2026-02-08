@@ -13,6 +13,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc --watch --project tsconfig.build.json",
     "lint": "eslint",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",

@@ -7,8 +7,8 @@
     "dev": "turbo dev",
     "format": "prettier . --write --cache --cache-location .cache/.prettiercache",
     "build": "turbo build --continue",
-    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
-    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
+    "lint": "turbo lint --continue",
+    "lint:fix": "turbo lint --continue -- --fix",
     "postinstall": "manypkg check",
     "pkg:fix": "manypkg fix",
     "test": "turbo test",
@@ -21,7 +21,7 @@
     "@manypkg/cli": "^0.25.1",
     "@types/node": "^24.0.0",
     "prettier": "^3.8.0",
-    "turbo": "^2.7.4"
+    "turbo": "^2.8.14"
   },
   "packageManager": "pnpm@10.30.3"
 }

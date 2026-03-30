@@ -23,7 +23,7 @@
     "@la/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^4.0.17",
     "eslint": "^10.0.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vitest": "^4.0.17"
   }
 }

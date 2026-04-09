@@ -1,6 +1,7 @@
 {
   "name": "@la/monorepo",
   "version": "0.1.0",
+  "private": true,
   "description": "No Frameworks included Typescript Monorepo Template with Linter, Tests & CI",
   "type": "module",
   "scripts": {
@@ -9,19 +10,24 @@
     "build": "turbo build --continue",
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",
-    "postinstall": "manypkg check",
-    "pkg:fix": "manypkg fix",
+    "postinstall": "sherif",
+    "lint:ws": "sherif",
     "test": "turbo test",
     "typecheck": "turbo typecheck --continue",
     "turbo": "turbo"
   },
-  "author": "Leif Arriens",
-  "license": "MIT",
   "devDependencies": {
-    "@manypkg/cli": "^0.25.1",
     "@types/node": "^24.0.0",
     "prettier": "^3.8.0",
+    "sherif": "^1.0.0",
     "turbo": "^2.9.1"
+  },
+  "author": "Leif Arriens",
+  "license": "MIT",
+  "sherif": {
+    "ignoreRule": [
+      "non-existant-packages"
+    ]
   },
   "packageManager": "pnpm@10.33.0"
 }

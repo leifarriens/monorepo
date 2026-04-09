@@ -16,7 +16,7 @@ fi
 
 # Replace @la with the new scope in all files
 echo "Replacing @la with @$SCOPE_NAME in all files..."
-find . -type f \( -name "*.json" -o -name "*.ts" -o -name "*.js" -o -name "*.md" -o -name "*.yaml" -o -name "*.yml" \) ! -path "./node_modules/*" ! -path "./.pnpm-store/*" ! -path "./.turbo/*" ! -path "./.git/*" -exec sed -i "s/@la/@$SCOPE_NAME/g" {} +
+find . -type f \( -name "*.json" -o -name "*.ts" -o -name "*.js" -o -name "*.mjs" -o -name "*.md" -o -name "*.yaml" -o -name "*.yml" \) ! -path "./node_modules/*" ! -path "./.pnpm-store/*" ! -path "./.turbo/*" ! -path "./.git/*" -exec sed -i "s/@la/@$SCOPE_NAME/g" {} +
 
 echo "Scope replacement complete!"
 
@@ -24,9 +24,9 @@ echo "Scope replacement complete!"
 echo "Running package installation..."
 pnpm install
 
-# Run manypkg to update package.json files
-echo "Fixing package.json files with manypkg..."
-pnpm manypkg fix
+# Run sherif to update package.json files
+echo "Fixing package.json files with sherif..."
+pnpm lint:ws --fix
 
 # Cleanup
 rm -rf .git renovate.json LICENSE init.sh

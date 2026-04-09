@@ -29,7 +29,7 @@ The script will:
 1. Prompt you to enter a new package scope name (e.g., if you enter "mycompany", the scope becomes "@mycompany")
 2. Replace all occurrences of `@la` with your new scope throughout the repository (in JSON, TypeScript, JavaScript, Markdown, and YAML files)
 3. Install dependencies using pnpm
-4. Update package.json files using manypkg
+4. Update package.json files using [sherif](https://github.com/QuiiBz/sherif)
 5. Initialize a new git repository
 
 **Note**: You can run this script from any directory; it will automatically work on the repository it's located in.

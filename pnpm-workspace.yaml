@@ -8,6 +8,6 @@ minimumReleaseAge: 10080
 trustPolicy: no-downgrade
 blockExoticSubdeps: true
 strictDepBuilds: true
-
-onlyBuiltDependencies:
-  - esbuild
+strictPeerDependencies: false
+allowBuilds:
+  esbuild: true

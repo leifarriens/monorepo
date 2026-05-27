@@ -29,5 +29,5 @@
       "non-existant-packages"
     ]
   },
-  "packageManager": "pnpm@11.2.0"
+  "packageManager": "pnpm@11.2.1"
 }

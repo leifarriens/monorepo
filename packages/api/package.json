@@ -21,9 +21,9 @@
   "devDependencies": {
     "@la/eslint-config": "workspace:*",
     "@la/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^4.0.17",
-    "eslint": "^10.0.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "eslint": "^10.6.0",
     "typescript": "^6.0.2",
-    "vitest": "^4.0.17"
+    "vitest": "^4.1.9"
   }
 }

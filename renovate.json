@@ -3,11 +3,28 @@
   "extends": ["config:recommended"],
   "automerge": true,
   "ignorePaths": ["**/node_modules/**"],
-  "dependencyDashboard": true,
+  "schedule": ["every weekend"],
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 1,
   "packageRules": [
     {
       "matchPackageNames": ["*"],
       "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Batch common JavaScript tooling updates into a smaller number of PRs.",
+      "matchPackageNames": [
+        "/^@types\\//",
+        "/^eslint/",
+        "/^@eslint\\//",
+        "/^prettier$/",
+        "/^typescript$/",
+        "/^vitest$/",
+        "/^turbo$/",
+        "/^sherif$/"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "tooling dependencies"
     }
   ]
 }

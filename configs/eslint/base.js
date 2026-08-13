@@ -1,10 +1,9 @@
 // @ts-check
 
-import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
 import turboConfig from "eslint-config-turbo/flat";
 import perfectionist from "eslint-plugin-perfectionist";
-import { defineConfig } from "eslint/config";
+import { defineConfig, includeIgnoreFile } from "eslint/config";
 import * as path from "node:path";
 import tseslint from "typescript-eslint";
 

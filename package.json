@@ -10,7 +10,7 @@
     "build": "turbo build --continue",
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",
-    "postinstall": "sherif",
+    "postinstall": "sherif --fix",
     "lint:ws": "sherif",
     "test": "turbo test",
     "typecheck": "turbo typecheck --continue",

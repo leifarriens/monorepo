@@ -1,0 +1,48 @@
+name: Init Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  init-test:
+    name: init-test
+    if: github.repository == 'leifarriens/monorepo'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📂 Checkout repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 🛠️ Setup environment
+        uses: ./.github/actions/setup-env
+
+      - name: 🧪 Test initialization and cleanup
+        shell: bash
+        run: |
+          cleanup_targets=(
+            .git
+            renovate.json
+            LICENSE
+            init.sh
+            .github/workflows/init-test.yaml
+          )
+
+          for target in "${cleanup_targets[@]}"; do
+            if [[ ! -e "$target" && ! -L "$target" ]]; then
+              echo "::error::Expected cleanup target '$target' to exist before initialization"
+              exit 1
+            fi
+          done
+
+          printf 'ci-test\n' | ./init.sh
+
+          for target in "${cleanup_targets[@]}"; do
+            if [[ -e "$target" || -L "$target" ]]; then
+              echo "::error::Initialization did not remove '$target'"
+              exit 1
+            fi
+          done

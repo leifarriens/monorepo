@@ -40,8 +40,12 @@ if [[ "$FORCE" != true ]]; then
   fi
 fi
 
+if ! command -v mise >/dev/null 2>&1; then
+  echo "Warning: mise is not installed; continuing with pnpm from PATH. Install mise from https://mise.jdx.dev/getting-started.html" >&2
+fi
+
 # Prompt user for new scope name
-read -p "Enter the new package scope name (without @): " SCOPE_NAME
+read -r -p "Enter the new package scope name (without @): " SCOPE_NAME
 
 if [ -z "$SCOPE_NAME" ]; then
   echo "Error: Scope name cannot be empty"
@@ -93,4 +97,4 @@ echo "Fixing package.json files with sherif..."
 pnpm lint:ws --fix
 
 # Cleanup
-rm -rf .git renovate.json LICENSE init.sh
+rm -rf .git renovate.json LICENSE init.sh .github/workflows/init-test.yaml

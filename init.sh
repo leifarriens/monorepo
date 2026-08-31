@@ -8,6 +8,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Change to the repository directory
 cd "$SCRIPT_DIR" || exit 1
 
+if ! command -v mise >/dev/null 2>&1; then
+  echo "Warning: mise is not installed; continuing with pnpm from PATH. Install mise from https://mise.jdx.dev/getting-started.html" >&2
+fi
+
 # Prompt user for new scope name
 read -p "Enter the new package scope name (without @): " SCOPE_NAME
 

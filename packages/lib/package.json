@@ -11,21 +11,22 @@
     }
   },
   "scripts": {
-    "build": "tsc --build tsconfig.build.json",
+    "build": "node ./node_modules/typescript-7/bin/tsc --build tsconfig.build.json",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsc --watch --project tsconfig.build.json",
+    "dev": "node ./node_modules/typescript-7/bin/tsc --watch --project tsconfig.build.json",
     "lint": "eslint --cache --cache-location .cache/.eslintcache",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "node ./node_modules/typescript-7/bin/tsc --noEmit"
   },
   "devDependencies": {
     "@la/eslint-config": "workspace:*",
     "@la/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^4.1.9",
-    "eslint": "^10.6.0",
-    "typescript": "^7.0.2",
-    "vitest": "^4.1.9"
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "typescript-7": "catalog:",
+    "vitest": "catalog:"
   }
 }

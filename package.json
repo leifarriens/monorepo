@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "turbo dev",
     "format": "prettier . --write --cache --cache-location .cache/.prettiercache",
-    "gen": "turbo gen",
     "build": "turbo build --continue",
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",

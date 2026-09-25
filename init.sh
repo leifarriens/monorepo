@@ -2,11 +2,43 @@
 
 set -euo pipefail
 
+FORCE=false
+
+if (( $# > 1 )); then
+  echo "Usage: $0 [--force]" >&2
+  exit 2
+fi
+
+if (( $# == 1 )); then
+  if [[ "$1" != "--force" ]]; then
+    echo "Usage: $0 [--force]" >&2
+    exit 2
+  fi
+  FORCE=true
+fi
+
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Change to the repository directory
 cd "$SCRIPT_DIR" || exit 1
+
+if [[ "$FORCE" != true ]]; then
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Error: Unable to verify Git working tree. Use --force to continue anyway." >&2
+    exit 1
+  fi
+
+  if ! GIT_STATUS="$(git status --porcelain --untracked-files=all)"; then
+    echo "Error: Unable to inspect Git working tree. Use --force to skip this check." >&2
+    exit 1
+  fi
+
+  if [[ -n "$GIT_STATUS" ]]; then
+    echo "Error: Git working tree has local changes. Commit or stash them, or rerun with --force to continue." >&2
+    exit 1
+  fi
+fi
 
 # Prompt user for new scope name
 read -p "Enter the new package scope name (without @): " SCOPE_NAME

@@ -58,6 +58,25 @@ Or use the `./init.sh` script to initialize and install in one command.
 
 `typecheck`: Checks for TypeScript typing issues across the codebase.
 
+### Generating packages
+
+Use the custom Turbo generator to create a package under `packages/`:
+
+```sh
+pnpm turbo gen package
+```
+
+Choose one of the package patterns already used in this repository:
+
+- **Internal library**: consumers import TypeScript source; builds declarations only.
+- **Compiled library**: builds JavaScript and declarations.
+- **Node.js application**: builds runnable JavaScript and includes a `start` script.
+- **No-build package**: only typechecks against the base tsconfig; for scripts or code bundled elsewhere. It has no build/dev scripts or build tsconfig.
+
+Each generated package includes a `package.json`, ESLint and Vitest configs, the base TypeScript config, and `src/index.ts`. The three buildable types also include `tsconfig.build.json`. Package names are scoped using the scope from the root package manifest.
+
+Run `pnpm install` after generation so pnpm links the new workspace and updates the lockfile.
+
 ### Example Packages with Different tsconfig Setups
 
 - **[core](packages/core)**: Internal monorepo library that only emits type declarations. Consumers import directly from source while benefiting from pre-built `.d.ts` files for faster IDE performance.

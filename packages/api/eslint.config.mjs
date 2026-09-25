@@ -1,3 +1,5 @@
+// @ts-check
+
 import baseConfig from "@la/eslint-config/base";
 import { defineConfig } from "eslint/config";
 

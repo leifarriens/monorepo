@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "turbo dev",
     "format": "prettier . --write --cache --cache-location .cache/.prettiercache",
+    "gen": "turbo gen",
     "build": "turbo build --continue",
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",
@@ -20,7 +21,7 @@
     "@types/node": "^24.0.0",
     "prettier": "^3.8.5",
     "sherif": "^1.12.0",
-    "turbo": "^2.10.0"
+    "turbo": "^2.11.4"
   },
   "author": "Leif Arriens",
   "license": "MIT",

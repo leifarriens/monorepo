@@ -23,7 +23,8 @@
       "outputs": [".cache/.eslintcache"]
     },
     "test": {
-      "dependsOn": ["^topo", "^build"]
+      "dependsOn": ["^topo", "^build"],
+      "outputs": ["coverage/**"]
     },
     "test:watch": {
       "dependsOn": ["^topo", "^build"],

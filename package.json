@@ -17,6 +17,7 @@
     "turbo": "turbo"
   },
   "devDependencies": {
+    "@turbo/gen": "^2.11.4",
     "@types/node": "^24.13.3",
     "prettier": "^3.9.8",
     "sherif": "^1.13.0",
@@ -29,5 +30,5 @@
       "non-existant-packages"
     ]
   },
-  "packageManager": "pnpm@12.5.1"
+  "packageManager": "pnpm@12.6.0"
 }

@@ -25,3 +25,4 @@ minimumReleaseAgeExclude:
   - "@turbo/windows-64@2.11.4"
   - "@turbo/windows-arm64@2.11.4"
   - turbo@2.11.4
+  - "@turbo/gen@2.11.4"

@@ -15,10 +15,6 @@ export default defineConfig([
   perfectionist.configs["recommended-natural"],
   includeIgnoreFile(path.join(import.meta.dirname, "../../.gitignore")),
   {
-    files: ["**/*.js"],
-    ...tseslint.configs.disableTypeChecked,
-  },
-  {
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
@@ -28,5 +24,9 @@ export default defineConfig([
         tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  {
+    files: ["**/*.js"],
+    ...tseslint.configs.disableTypeChecked,
   },
 ]);

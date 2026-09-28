@@ -30,8 +30,9 @@
     "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json"
   },
   "include": [
-    "${configDir}/*.config.ts",
-    "${configDir}/*.config.mjs",
+    "${configDir}/*.ts",
+    "${configDir}/*.mjs",
+    "${configDir}/*.mts",
     "${configDir}/src"
   ]
 }

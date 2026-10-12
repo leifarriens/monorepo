@@ -1,82 +1,45 @@
-# AI Agent Guidelines
+# Agent Guidelines
 
-This document provides guidance for AI coding agents working in this TypeScript monorepo. Follow these instructions to verify your implementations using the repository's linting, testing, and type checking tools.
+Use `pnpm` for all package-manager commands. Run the commands below from the repository root.
 
-## Quick Reference
+## Generating packages
 
-| Task       | Command          | Description                  |
-| ---------- | ---------------- | ---------------------------- |
-| Lint all   | `pnpm lint`      | Check code style and quality |
-| Lint & fix | `pnpm lint:fix`  | Auto-fix linting issues      |
-| Test all   | `pnpm test`      | Run all tests                |
-| Type check | `pnpm typecheck` | Verify TypeScript types      |
-| Format     | `pnpm format`    | Format code with Prettier    |
-
-## Verification Workflow
-
-After making changes, **always run verification** to ensure your implementation is correct:
+If you need to create a new package, use the Turbo generator instead of manually scaffolding it. Agents should pass both answers with `--args` to avoid interactive prompts:
 
 ```bash
-pnpm lint && pnpm typecheck && pnpm test
+pnpm turbo gen package --args ui internal
 ```
 
-If any command fails, fix the issues before considering the task complete.
+Replace `ui` with an unscoped name using lowercase letters, numbers, and hyphens. The second argument is the package type:
 
-## Iterative Fix Workflow
+- `internal`: source imports, builds declarations only.
+- `library`: builds JavaScript and declarations.
+- `node`: builds runnable JavaScript.
+- `no-build`: scripts or externally bundled code.
 
-When fixing a specific issue (e.g., a lint error or a single failing test), use targeted commands for faster feedback:
+The generator creates `packages/<name>` with the repository's standard configs, applies the root package scope, runs `pnpm install`, and formats the generated files. For interactive terminal use, run `pnpm turbo gen package` without `--args`.
 
-1. **Fix the issue** in your code
-2. **Run the specific verification** for that issue type:
+## Verification workflow
 
-   ```bash
-   # After fixing a lint issue
-   pnpm lint
+Documentation-only changes do not require targeted verification loops or the full verification suite. The requirements below apply when changes affect code or configuration.
 
-   # After fixing a type error
-   pnpm typecheck
+- While implementing or fixing an issue, run targeted checks for the affected package and task. For test failures, narrow the run to the failing test file or test case when possible.
+- For lint failures, try the affected package's autofix command first. Unrelated changes produced by lint autofix may be kept. Manually fix remaining issues only if they were caused by your current changes.
+- After a fix, rerun the targeted check until issues caused by your changes are resolved. Do not rerun the full suite after every edit.
+- Before finishing, run the full verification suite:
 
-   # After fixing a failing test
-   pnpm test
-   ```
+  ```bash
+  pnpm turbo typecheck lint test build
+  ```
 
-3. **Once the targeted check passes**, run the full verification loop:
-   ```bash
-   pnpm format && pnpm lint && pnpm typecheck && pnpm test
-   ```
+- If the full suite reveals an issue caused by your changes, fix it using targeted checks, then rerun the full suite.
+- Across all verification checks (typecheck, lint, test, and build), fix only issues caused by your current changes, including regressions in dependent packages. Investigate failures before attributing them; do not assume a failure is pre-existing just because it occurs in an unchanged file. Except for changes produced by lint autofix as allowed above, leave unrelated or pre-existing issues untouched and report them, along with any checks that failed or could not run. Do not claim verification passed when it did not.
 
-This avoids running all checks repeatedly while iterating on a fix. Turbo caches unchanged packages, so the full verification is fast after targeted work.
+## Targeted commands
 
-> **Note**: For formatting issues, `pnpm format` auto-fixes problems—just re-run it and proceed to full verification.
-
-## Package Manager
-
-This monorepo uses **pnpm**. Always use `pnpm` commands.
-
-## Running Commands
-
-### All Packages (Recommended)
-
-Run commands from the repository root to verify all packages. Non-changed packages are cached with turbo for faster runs:
+Replace `@la/core` with the affected package's actual `name` from its `package.json`.
 
 ```bash
-pnpm lint
-pnpm test
-pnpm typecheck
-```
-
-### Specific Package
-
-To run commands for a specific package, use the `--filter` flag:
-
-```bash
-pnpm turbo lint --filter=@la/core
-pnpm turbo test --filter=@la/api
-pnpm turbo typecheck --filter=@la/core
-```
-
-Or navigate to the package directory:
-
-```bash
-cd packages/core && pnpm test
+pnpm turbo --filter=@la/core lint -- --fix
+pnpm turbo --filter=@la/core lint
 ```

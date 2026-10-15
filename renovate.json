@@ -17,7 +17,7 @@
         "/^@types\\//",
         "/^eslint/",
         "/^@eslint\\//",
-        "/^prettier$/",
+        "/^oxfmt$/",
         "/^typescript$/",
         "/^vitest$/",
         "/^turbo$/",

@@ -12,7 +12,8 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 - **[Vitest](https://vitest.dev/guide/)**: Obvious choice for (unit) testing in a TypeScript environment.
 
-- **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Ensures strict rules and consistent code style across the entire codebase.
+- **[TypeScript ESLint](https://typescript-eslint.io/getting-started)**: Enforces strict linting rules across the codebase.
+- **[Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html)**: Formats supported files consistently across the codebase.
 
 ## Setup and Usage
 
@@ -48,7 +49,7 @@ Or use the `./init.sh` script to initialize and install in one command.
 
 `dev`: This command is used to start the development server for each package in the monorepo.
 
-`format`: Formats the codebase using Prettier.
+`format`: Formats the codebase using Oxfmt.
 
 `lint`: Runs ESLint to check for code style and quality issues throughout the monorepo.
 
@@ -75,7 +76,7 @@ Choose one of the package patterns already used in this repository:
 
 Each generated package includes a `package.json`, ESLint and Vitest configs, the base TypeScript config, and `src/index.ts`. The three buildable types also include `tsconfig.build.json`. Package names are scoped using the scope from the root package manifest.
 
-Run `pnpm install` after generation so pnpm links the new workspace and updates the lockfile.
+The generator runs `pnpm install` after scaffolding so pnpm links the new workspace and updates the lockfile. It then formats the generated files with Oxfmt.
 
 ### Example Packages with Different tsconfig Setups
 

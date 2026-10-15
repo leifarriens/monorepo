@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "No Frameworks included Typescript Monorepo Template with Linter, Tests & CI",
+  "license": "MIT",
+  "author": "Leif Arriens",
   "type": "module",
   "scripts": {
     "dev": "turbo dev",
-    "format": "prettier . --write --cache --cache-location .cache/.prettiercache",
+    "format": "oxfmt",
     "build": "turbo build --continue",
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",
@@ -19,16 +21,14 @@
   "devDependencies": {
     "@turbo/gen": "^2.11.4",
     "@types/node": "^24.13.3",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.72.0",
     "sherif": "^1.13.0",
     "turbo": "^2.11.4"
   },
-  "author": "Leif Arriens",
-  "license": "MIT",
+  "packageManager": "pnpm@12.9.1",
   "sherif": {
     "ignoreRule": [
       "non-existant-packages"
     ]
-  },
-  "packageManager": "pnpm@12.9.1"
+  }
 }

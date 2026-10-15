@@ -23,8 +23,6 @@
     "sherif": "^1.13.0",
     "turbo": "^2.11.4"
   },
-  "author": "Leif Arriens",
-  "license": "MIT",
   "sherif": {
     "ignoreRule": [
       "non-existant-packages"

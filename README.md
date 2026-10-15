@@ -2,9 +2,11 @@
 
 ## Overview
 
-This repository is a template for creating a TypeScript monorepo with a focus on development efficiency through linters, testing, and continuous integration setup. It is designed to work seamlessly with tools like pnpm, Turbo, and Vitest.
+This repository is a template for creating a TypeScript monorepo with a focus on development efficiency through linters, testing, and continuous integration setup. It is designed to work seamlessly with tools like mise, pnpm, Turbo, and Vitest.
 
 ## Key Features
+
+- **[mise](https://mise.jdx.dev/)**: Manages the pinned Node.js version defined in `mise.toml`.
 
 - **[pnpm](https://github.com/pnpm/pnpm)**: Significantly faster and more disk-space efficient than npm. Plus it has first-class monorepo support, making it ideal for managing multiple packages within a single repository.
 
@@ -18,7 +20,7 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 ### Initialization
 
-To initialize this monorepo template for your project, run the provided setup script:
+To initialize this monorepo template for your project, first [install mise](https://mise.jdx.dev/getting-started.html), then run the provided setup script:
 
 ```sh
 ./init.sh
@@ -36,13 +38,13 @@ The script will:
 
 ### Installation
 
-After cloning the repository, you can manually install dependencies with:
+After cloning the repository, install dependencies with:
 
 ```sh
 pnpm install
 ```
 
-Or use the `./init.sh` script to initialize and install in one command.
+Or use the `./init.sh` script to initialize and install in one command. Once mise is [activated in your shell](https://mise.jdx.dev/getting-started.html#activate-mise), `pnpm` uses the version defined in `mise.toml`.
 
 ### Scripts
 

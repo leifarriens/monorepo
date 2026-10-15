@@ -40,10 +40,6 @@ if [[ "$FORCE" != true ]]; then
   fi
 fi
 
-if ! command -v mise >/dev/null 2>&1; then
-  echo "Warning: mise is not installed; continuing with pnpm from PATH. Install mise from https://mise.jdx.dev/getting-started.html" >&2
-fi
-
 # Prompt user for new scope name
 read -r -p "Enter the new package scope name (without @): " SCOPE_NAME
 
@@ -56,6 +52,16 @@ if [[ ! "$SCOPE_NAME" =~ ^[a-z0-9][a-z0-9._-]*$ ]]; then
   echo "Error: Scope name must contain only lowercase letters, numbers, dots, underscores, or hyphens"
   exit 1
 fi
+
+if ! command -v mise >/dev/null 2>&1; then
+  echo "Warning: mise is not installed; continuing with pnpm from PATH. Install mise from https://mise.jdx.dev/getting-started.html" >&2
+fi
+
+
+# Install dependencies before changing package names so the postinstall check
+# runs against the template's already-sorted package manifests.
+echo "Installing dependencies..."
+pnpm install
 
 # Replace @la with the new scope in all text files. BSD sed (used by macOS)
 # requires an explicit backup suffix for -i, while GNU sed does not.
@@ -88,13 +94,13 @@ replace_scope
 
 echo "Scope replacement complete!"
 
-# Run install
-echo "Running package installation..."
-pnpm install
-
-# Run sherif to update package.json files
+# Run sherif to update package.json files after the scope replacement.
 echo "Fixing package.json files with sherif..."
-pnpm lint:ws --fix
+./node_modules/.bin/sherif --fix
+
+# Update the lockfile and workspace links for the new package scope.
+echo "Updating package installation for the new scope..."
+pnpm install
 
 # Cleanup
 rm -rf .git renovate.json LICENSE init.sh .github/workflows/init-test.yaml

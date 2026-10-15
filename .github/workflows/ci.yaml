@@ -19,6 +19,9 @@ jobs:
       - name: 🛠️ Setup environment
         uses: ./.github/actions/setup-env
 
+      - name: 🖌️ Format Check
+        run: pnpm format --check
+
       - name: 🏷️ Typecheck
         run: pnpm typecheck
 

@@ -105,12 +105,9 @@ export default function generator(plop) {
         actions.push((answers) => {
           if ("name" in answers && typeof answers.name === "string") {
             execSync("pnpm i", { stdio: "inherit" });
-            execSync(
-              `pnpm prettier ./packages/${answers.name}/** --write --log-level silent`,
-              {
-                stdio: "inherit",
-              },
-            );
+            execSync(`pnpm format -- ./packages/${answers.name}`, {
+              stdio: "inherit",
+            });
           }
         });
       }

@@ -96,7 +96,8 @@ echo "Scope replacement complete!"
 
 # Run sherif to update package.json files after the scope replacement.
 echo "Fixing package.json files with sherif..."
-./node_modules/.bin/sherif --fix
+# Sherif refuses to apply fixes when the CI environment variable is set.
+env -u CI ./node_modules/.bin/sherif --fix
 
 # Update the lockfile and workspace links for the new package scope.
 echo "Updating package installation for the new scope..."

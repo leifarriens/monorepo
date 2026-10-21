@@ -47,6 +47,8 @@ The script will:
 4. Update package.json files using [sherif](https://github.com/QuiiBz/sherif)
 5. Initialize a new git repository
 
+**Note**: You can run this script from any directory; it will automatically work on the repository it's located in.
+
 ### Installation
 
 After cloning the repository, install dependencies with:

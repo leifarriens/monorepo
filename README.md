@@ -6,11 +6,11 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 ## Key Features
 
-- **[mise](https://mise.jdx.dev/)**: Manages the pinned Node.js version defined in `mise.toml`.
-- **[pnpm](https://github.com/pnpm/pnpm)**: Significantly faster and more disk-space efficient than npm. Plus it has first-class monorepo support, making it ideal for managing multiple packages within a single repository.
-- **[Turbo](https://turborepo.com/docs)**: A tool for speeding up builds and task runs in monorepos. Turbo helps run scripts like linting, testing, and type checking across multiple packages in parallel, leveraging caching for faster repeats.
-- **[Vitest](https://vitest.dev/guide/)**: Obvious choice for (unit) testing in a TypeScript environment.
-- **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Ensures strict rules and consistent code style across the entire codebase.
+- **[mise](https://mise.jdx.dev/)**: Pins the Node.js version.
+- **[pnpm](https://github.com/pnpm/pnpm)**: Manages dependencies and workspaces.
+- **[Turbo](https://turborepo.com/docs)**: Runs and caches monorepo tasks.
+- **[Vitest](https://vitest.dev/guide/)**: Runs unit tests.
+- **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Lints and formats the codebase.
 - **[Next.js](https://nextjs.org/)**: The starter web app lives in `apps/web` and uses the App Router.
 - **[shadcn/ui](https://ui.shadcn.com/)**: Reusable UI components live in the shared `packages/ui` workspace package.
 - **[Better Auth](https://www.better-auth.com/)**: Email and password authentication, with a sign-in page at `/login`.
@@ -143,6 +143,14 @@ Choose one of the package patterns already used in this repository:
 - **No-build package**: only typechecks against the base tsconfig; for scripts or code bundled elsewhere. It has no build/dev scripts or build tsconfig.
 
 Each generated package includes a `package.json`, ESLint and Vitest configs, the base TypeScript config, and `src/index.ts`. The three buildable types also include `tsconfig.build.json`. Package names are scoped using the scope from the root package manifest.
+
+Run `pnpm install` after generation so pnpm links the new workspace and updates the lockfile.
+
+### Example Packages with Different tsconfig Setups
+
+- **[core](packages/core)**: Internal monorepo library that only emits type declarations. Consumers import directly from source while benefiting from pre-built `.d.ts` files for faster IDE performance.
+- **[lib](packages/lib)**: Publishable library example that builds JavaScript and type declarations. Use this pattern for packages intended for npm or external consumers.
+- **[api](packages/api)**: Node.js application example that builds executable JavaScript. Use this pattern for CLIs, servers, or scripts that run in a Node.js environment.
 
 Read more about the tsconfig setup in the [Tsconfig README](./configs/typescript/README.md).
 

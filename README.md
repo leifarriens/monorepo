@@ -7,16 +7,25 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 ## Key Features
 
 - **[mise](https://mise.jdx.dev/)**: Manages the pinned Node.js version defined in `mise.toml`.
-
 - **[pnpm](https://github.com/pnpm/pnpm)**: Significantly faster and more disk-space efficient than npm. Plus it has first-class monorepo support, making it ideal for managing multiple packages within a single repository.
-
 - **[Turbo](https://turborepo.com/docs)**: A tool for speeding up builds and task runs in monorepos. Turbo helps run scripts like linting, testing, and type checking across multiple packages in parallel, leveraging caching for faster repeats.
-
 - **[Vitest](https://vitest.dev/guide/)**: Obvious choice for (unit) testing in a TypeScript environment.
-
 - **[Typescript ESLint](https://typescript-eslint.io/getting-started) with [Prettier](https://prettier.io/docs/)**: Ensures strict rules and consistent code style across the entire codebase.
 
 ## Setup and Usage
+
+### Clone a starter
+
+Choose a branch to get the starter you need:
+
+- **Monorepo starter** (`main`):
+  ```sh
+  git clone --depth 1 https://github.com/leifarriens/monorepo.git my-monorepo
+  ```
+- **Next.js starter** (`next`):
+  ```sh
+  git clone --depth 1 -b next https://github.com/leifarriens/monorepo.git my-nextjs-app
+  ```
 
 ### Initialization
 

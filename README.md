@@ -18,6 +18,19 @@ This repository is a template for creating a TypeScript monorepo with a focus on
 
 ## Setup and Usage
 
+### Clone a starter
+
+Choose a branch to get the starter you need:
+
+- **Monorepo starter** (`main`):
+  ```sh
+  git clone --depth 1 https://github.com/leifarriens/monorepo.git my-monorepo
+  ```
+- **Next.js starter** (`next`):
+  ```sh
+  git clone --depth 1 -b next https://github.com/leifarriens/monorepo.git my-nextjs-app
+  ```
+
 ### Initialization
 
 To initialize this monorepo template for your project, first [install mise](https://mise.jdx.dev/getting-started.html), then run the provided setup script:

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["$TURBO_EXTENDS$", "typecheck"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"],
+      "env": ["BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
+    },
+    "dev": {
+      "passThroughEnv": [
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "DATABASE_URL"
+      ]
+    },
+    "test": {
+      "env": ["TEST_DATABASE_URL"]
+    },
+    "typecheck": {
+      "outputs": ["$TURBO_EXTENDS$", ".next/types/**", "next-env.d.ts"]
+    }
+  }
+}

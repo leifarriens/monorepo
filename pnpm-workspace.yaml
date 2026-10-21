@@ -5,18 +5,24 @@ packages:
   - "!**/test/**"
 
 catalog:
+  "@tailwindcss/postcss": "^4.3.3"
+  "@types/react-dom": "19.3.0"
+  "@types/react": "19.3.0"
   "@vitest/coverage-v8": ^5.0.1
   eslint: ^10.10.0
+  react-dom: "19.3.0"
+  react: "19.3.0"
+  tailwindcss: ^4.3.3
   typescript: ^6.0.2
   vitest: ^5.0.1
 
-minimumReleaseAge: 10080
-trustPolicy: no-downgrade
+minimumReleaseAge: 1440
 blockExoticSubdeps: true
 strictDepBuilds: true
 strictPeerDependencies: false
 allowBuilds:
   esbuild: true
+  unrs-resolver: true
 minimumReleaseAgeExclude:
   - "@turbo/darwin-64@2.11.4"
   - "@turbo/darwin-arm64@2.11.4"

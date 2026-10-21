@@ -2,11 +2,9 @@ name: Init Test
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main", "next"]
   pull_request:
-    branches:
-      - main
+    branches: ["main", "next"]
 
 jobs:
   init-test:

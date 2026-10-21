@@ -11,6 +11,7 @@
     "lint": "turbo lint --continue",
     "lint:fix": "turbo lint --continue -- --fix",
     "postinstall": "sherif",
+    "install:skills": "pnpx skills experimental_install",
     "lint:ws": "sherif",
     "test": "turbo test",
     "typecheck": "turbo typecheck --continue",
@@ -28,5 +29,5 @@
       "non-existant-packages"
     ]
   },
-  "packageManager": "pnpm@12.12.1"
+  "packageManager": "pnpm@12.14.0"
 }

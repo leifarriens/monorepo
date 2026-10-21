@@ -2,9 +2,11 @@ name: Init Test
 
 on:
   push:
-    branches: ["main", "next"]
+    branches:
+      - next
   pull_request:
-    branches: ["main", "next"]
+    branches:
+      - next
 
 jobs:
   init-test:
@@ -50,3 +52,8 @@ jobs:
               exit 1
             fi
           done
+
+          if grep -Eq '^[[:space:]]*-[[:space:]]*next([[:space:]]*(#.*)?)?$' .github/workflows/ci.yaml; then
+            echo "::error::Initialization did not replace the workflow branch filter with 'main'"
+            exit 1
+          fi

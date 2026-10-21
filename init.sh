@@ -23,6 +23,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Change to the repository directory
 cd "$SCRIPT_DIR" || exit 1
 
+CURRENT_BRANCH="${GITHUB_BASE_REF:-${GITHUB_REF_NAME:-$(git branch --show-current 2>/dev/null || true)}}"
+
 if [[ "$FORCE" != true ]]; then
   if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Error: Unable to verify Git working tree. Use --force to continue anyway." >&2
@@ -93,6 +95,17 @@ echo "Replacing @la with @$SCOPE_NAME in all files..."
 replace_scope
 
 echo "Scope replacement complete!"
+
+# Workflows use unquoted block-list branch filters. Only rewrite matching
+# entries inside the top-level on section, leaving job steps untouched.
+if [[ -n "$CURRENT_BRANCH" && "$CURRENT_BRANCH" != "main" ]]; then
+  BRANCH_PATTERN="$(printf '%s' "$CURRENT_BRANCH" | sed 's/[][\\.^$*+?(){}|]/\\&/g')"
+  while IFS= read -r -d '' file; do
+    sed -E "${SED_IN_PLACE_ARGS[@]}" \
+      "/^on:/,/^[^[:space:]#]/s|^([[:space:]]*-[[:space:]]*)$BRANCH_PATTERN([[:space:]]*(#.*)?)$|\\1main\\2|" \
+      "$file"
+  done < <(find ./.github/workflows -type f \( -name "*.yaml" -o -name "*.yml" \) -print0)
+fi
 
 # Run sherif to update package.json files after the scope replacement.
 echo "Fixing package.json files with sherif..."

@@ -13,7 +13,7 @@ catalog:
   react-dom: "19.3.0"
   react: "19.3.0"
   tailwindcss: ^4.3.3
-  typescript: ^6.0.2
+  typescript: ^7.0.0
   vitest: ^5.0.1
 
 minimumReleaseAge: 1440

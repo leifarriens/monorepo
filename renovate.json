@@ -26,6 +26,11 @@
       ],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "tooling dependencies"
+    },
+    {
+      "description": "Keep Next.js and its ESLint config on the same version.",
+      "matchPackageNames": ["next", "eslint-config-next"],
+      "groupName": "Next.js dependencies"
     }
   ]
 }

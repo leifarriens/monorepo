@@ -21,7 +21,7 @@
   "devDependencies": {
     "@turbo/gen": "^2.11.4",
     "@types/node": "^24.13.3",
-    "oxfmt": "^0.72.0",
+    "oxfmt": "^0.79.0",
     "sherif": "^1.13.0",
     "turbo": "^2.11.4"
   },
